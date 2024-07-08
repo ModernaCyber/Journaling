@@ -22,12 +22,18 @@ The Personal Journaling App allows users to write journal entries, categorize th
 
 ## Setup Instructions
 
-### Backend Service
-
 1. **Clone the repository:**
 
    ```bash
    git clone https://github.com/ModernaCyber/Journaling.git
+   cd Journaling/JournalApp
+   ```
+
+### Backend Service
+
+1. **Cd to server directory:**
+
+   ```bash
    cd Journaling/server
    ```
 
@@ -59,10 +65,9 @@ The Personal Journaling App allows users to write journal entries, categorize th
 
 ### Mobile Application
 
-1. **Clone the repository:**
+1. **Cd to App Directory:**
 
    ```bash
-   git clone https://github.com/ModernaCyber/Journaling.git
    cd Journaling/JournalApp
    ```
 
