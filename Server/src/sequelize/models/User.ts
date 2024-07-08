@@ -2,22 +2,13 @@ import { Column, DataType, Model, Table } from "sequelize-typescript";
 @Table
 export class User extends Model {
     @Column
-    username!: string;
+    name!: string;
   
     @Column
     email!: string;
   
     @Column
     password!: string;
-  
-    @Column
-    firstName?: string;
-  
-    @Column
-    lastName?: string;
-  
-    @Column
-    birthdate?: Date;
   
     @Column
     isActive?: boolean;

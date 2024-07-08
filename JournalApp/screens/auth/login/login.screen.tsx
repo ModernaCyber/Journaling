@@ -102,6 +102,8 @@ import { SERVER_URI } from "@/utils/uri";
         .then(async (res) => {
           await AsyncStorage.setItem("access_token", res.data.accessToken);
           await AsyncStorage.setItem("refresh_token", res.data.refreshToken);
+          await AsyncStorage.setItem("user", res.data.user);
+
           router.push("/(tabs)");
         })
         .catch((error) => {
@@ -126,7 +128,7 @@ import { SERVER_URI } from "@/utils/uri";
             Welcome Back!
           </Text>
           <Text style={styles.learningText}>
-            Login to your existing account of Becodemy
+            Login to your existing account.
           </Text>
           <View style={styles.inputContainer}>
             <View>

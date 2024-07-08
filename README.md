@@ -26,7 +26,7 @@ The Personal Journaling App allows users to write journal entries, categorize th
 
    ```bash
    git clone https://github.com/ModernaCyber/Journaling.git
-   cd Journaling/JournalApp
+   cd Journaling
    ```
 
 ### Backend Service

@@ -43,11 +43,13 @@ app.use(
 );
 app.use(Router);
 
+const isDev = process.env.SYNC_DB ? process.env.SYNC_DB === 'true' : false;
+
 // Define an asynchronous function to start the server and sync the database
 const start = async (): Promise<void> => {
   try {
     await authenticate();
-    await connection.sync(); // Synchronizes the database with the defined models
+    await connection.sync({ alter: isDev }); // Synchronizes the database with the defined models
     app.listen(PORT, () => {
       const url = `http://localhost:${PORT}`;
       console.log(`Server is running on port ${PORT}`);

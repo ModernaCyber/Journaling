@@ -26,26 +26,13 @@ export default function OnBoardingScreen() {
             source={require("@/assets/images/react-logo.png")}
             style={styles.logo}
           />
-          <Image source={require("@/assets/images/react-logo.png")} />
         </View>
         <View style={styles.titleWrapper}>
-          <Image
-            style={styles.titleTextShape1}
-            source={require("@/assets/images/react-logo.png")}
-          />
           <Text style={[styles.titleText, { fontFamily: "Raleway_700Bold" }]}>
             Start Journaling With
           </Text>
-          <Image
-            style={styles.titleTextShape2}
-            source={require("@/assets/images/react-logo.png")}
-          />
         </View>
         <View>
-          <Image
-            style={styles.titleShape3}
-            source={require("@/assets/images/react-logo.png")}
-          />
           <Text style={[styles.titleText, { fontFamily: "Raleway_700Bold" }]}>
             JRN_APP
           </Text>
