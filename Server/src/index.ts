@@ -2,10 +2,16 @@ import express, { Application } from "express";
 import morgan from "morgan";
 import swaggerUi from "swagger-ui-express";
 import Router from "./routes";
+import connection from "./sequelize/db/db";
+import { authenticate } from "./sequelize/db/authenticate";
+import cors from "cors";
+import { corsOptions } from "./config/corsConfig";
 
 const PORT = process.env.PORT || 8000;
 
 const app: Application = express();
+app.use(cors(corsOptions));
+
 app.use(express.json());
 app.use(morgan("tiny"));
 app.use(express.static("public"));
@@ -37,9 +43,21 @@ app.use(
 );
 app.use(Router);
 
-app.listen(PORT, () => {
-  const url = `http://localhost:${PORT}`;
-  console.log(`Server is running on port ${PORT}`);
-  console.log(`Visit: \x1b[34m${url}\x1b[0m`); // Blue color for the URL
-  console.log(`Swagger API: \x1b[34m${url}/docs\x1b[0m`); // Blue color for the Swagger URL
-});
+// Define an asynchronous function to start the server and sync the database
+const start = async (): Promise<void> => {
+  try {
+    await authenticate();
+    await connection.sync(); // Synchronizes the database with the defined models
+    app.listen(PORT, () => {
+      const url = `http://localhost:${PORT}`;
+      console.log(`Server is running on port ${PORT}`);
+      console.log(`Visit: \x1b[34m${url}\x1b[0m`); // Blue color for the URL
+      console.log(`Swagger API: \x1b[34m${url}/docs\x1b[0m`); // Blue color for the Swagger URL
+    });
+  } catch (error) {
+    console.error(error); // Logs any errors that occur
+    process.exit(1); // Exits the process with an error status code
+  }
+};
+
+void start(); // Invokes the start function to start the server
