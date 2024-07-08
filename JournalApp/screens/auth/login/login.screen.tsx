@@ -103,11 +103,14 @@ import { SERVER_URI } from "@/utils/uri";
           await AsyncStorage.setItem("access_token", res.data.accessToken);
           await AsyncStorage.setItem("refresh_token", res.data.refreshToken);
           await AsyncStorage.setItem("user", res.data.user);
-
+          Toast.show("Success Login",{
+            type:"success"
+          })
           router.push("/(tabs)");
         })
         .catch((error) => {
           console.log(error);
+          setError(error?.message)
           Toast.show("Email or password is not correct!", {
             type: "danger",
           });

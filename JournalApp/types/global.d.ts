@@ -18,7 +18,6 @@ type onboardingSwiperDataType = {
     email: string;
     avatar?: Avatar;
     password?: string;
-    courses: any;
     createdAt: Date;
     updatedAt: Date;
   };

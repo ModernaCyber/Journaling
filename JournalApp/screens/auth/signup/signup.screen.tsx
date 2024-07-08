@@ -31,7 +31,7 @@ import {
 import { useState } from "react";
 import { commonStyles } from "@/styles/common/common";
 import { router } from "expo-router";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+// import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import axios from "axios";
 import { SERVER_URI } from "@/utils/uri";
@@ -125,6 +125,8 @@ export default function SignUpScreen() {
         Toast.show("Email already exist!", {
           type: "danger",
         });
+        setError(error?.message)
+
       });
   };
 
