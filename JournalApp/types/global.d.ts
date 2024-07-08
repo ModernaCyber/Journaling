@@ -5,6 +5,8 @@ type onboardingSwiperDataType = {
     sortDescrition: string;
     sortDescrition2?: string;
     image: any;
+    bannerImageUrl: any,
+
   };
   
   type Avatar = {

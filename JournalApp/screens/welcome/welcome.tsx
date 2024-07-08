@@ -61,6 +61,17 @@ export default function WelcomeIntroScreen() {
             {item.sortDescrition2}
           </Text>
         </View>
+        <View>
+          <Image
+            source={item.bannerImageUrl}
+            style={{
+              alignSelf: "center",
+              marginBottom: 30,
+              width: "80%",
+              height: 300,
+            }}
+          />
+        </View>
       </View>
     </LinearGradient>
   );

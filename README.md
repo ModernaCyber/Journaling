@@ -19,6 +19,11 @@ The Personal Journaling App allows users to write journal entries, categorize th
 
 - **server/**: Contains the backend service code.
 - **JournalApp/**: Contains the mobile application code (Expo app).
+![Project onboard](./imgs/onboard.PNG)
+![Project welcome](./imgs/welcome.PNG)
+![Project login](./imgs/login.PNG)
+![Project signup](./imgs/signup.PNG)
+
 
 ## Setup Instructions
 
